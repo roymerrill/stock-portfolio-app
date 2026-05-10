@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Stock Portfolio</title>
+  <style>
+    :root { --accent: #007AFF; --bg: #f5f5f7; --text: #1d1d1f; --secondary: #6e6e73; --card: #fff; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #000; --text: #f5f5f7; --secondary: #a1a1a6; --card: #1c1c1e; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 60px 24px; }
+    h1 { font-size: 40px; font-weight: 700; margin-bottom: 8px; }
+    .updated { color: var(--secondary); font-size: 14px; margin-bottom: 40px; }
+    h2 { font-size: 22px; font-weight: 600; margin: 36px 0 10px; }
+    p, li { font-size: 16px; color: var(--text); margin-bottom: 12px; }
+    ul { padding-left: 20px; }
+    a { color: var(--accent); }
+    footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.08); font-size: 13px; color: var(--secondary); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="index.html" style="color:var(--accent);font-size:14px;">← Back</a>
+    <h1 style="margin-top:24px;">Privacy Policy</h1>
+    <p class="updated">Last updated: May 10, 2026</p>
+
+    <p>Stock Portfolio ("the app") is a personal finance app built by Roy Merrill. Your privacy is important. This policy explains what data the app uses and where it stays.</p>
+
+    <h2>Data stored on your device</h2>
+    <p>The app stores the following data locally and, if you have iCloud enabled, synced across your own devices via CloudKit:</p>
+    <ul>
+      <li>Stock ticker symbols you enter</li>
+      <li>Purchase lot details: quantity, purchase date, purchase price</li>
+      <li>Cached market price snapshots used by widgets</li>
+      <li>Your privacy mode preference (via App Group shared defaults)</li>
+    </ul>
+    <p>This data is yours. It is never sent to any server operated by the developer.</p>
+
+    <h2>Finnhub API key (optional)</h2>
+    <p>If you choose to enter a personal Finnhub API key, it is stored exclusively in your device's Keychain. It is never logged, synced to iCloud, included in crash reports, or transmitted anywhere other than directly to Finnhub's servers when fetching a price quote.</p>
+
+    <h2>Market data requests</h2>
+    <p>The app fetches stock price quotes from Finnhub (finnhub.io) either via a shared proxy or directly using your personal Finnhub key. Requests contain only the ticker symbol being queried. No account information, portfolio details, or personal data are included in these requests.</p>
+
+    <h2>Analytics &amp; crash reporting</h2>
+    <p>The app does not include any third-party analytics, advertising SDKs, or crash reporting services. No usage data is collected by the developer.</p>
+
+    <h2>iCloud / CloudKit</h2>
+    <p>If iCloud is enabled on your device, your portfolio lots sync across your own devices through Apple's CloudKit. This data is governed by Apple's privacy policy and is not accessible to the developer.</p>
+
+    <h2>Children</h2>
+    <p>The app is not directed at children under 13 and does not knowingly collect data from children.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy? Email <a href="mailto:roymerrill@mac.com">roymerrill@mac.com</a>.</p>
+
+    <footer>
+      <p><a href="index.html">Stock Portfolio</a> · Made by Roy Merrill</p>
+    </footer>
+  </div>
+</body>
+</html>

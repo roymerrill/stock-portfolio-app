@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Portfolio — Track Stocks &amp; Lots</title>
+  <meta name="description" content="Track your personal stock investments on Mac and iPhone. Enter purchase lots, see live portfolio performance, and put your portfolio on your Home Screen with beautiful widgets." />
+  <style>
+    :root {
+      --accent: #007AFF;
+      --accent-dark: #0055CC;
+      --bg: #f5f5f7;
+      --text: #1d1d1f;
+      --secondary: #6e6e73;
+      --card: #ffffff;
+      --radius: 18px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --text: #f5f5f7;
+        --secondary: #a1a1a6;
+        --card: #1c1c1e;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+      border-radius: 27px;
+      margin: 0 auto 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1.07;
+      margin-bottom: 16px;
+    }
+    .tagline {
+      font-size: 21px;
+      color: var(--secondary);
+      max-width: 520px;
+      margin: 0 auto 40px;
+    }
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 980px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-download:hover { background: var(--accent-dark); }
+    .btn-appstore {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card);
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 500;
+      padding: 14px 28px;
+      border-radius: 980px;
+      text-decoration: none;
+      border: 1px solid rgba(0,0,0,0.1);
+      transition: opacity 0.15s;
+    }
+    .btn-appstore:hover { opacity: 0.75; }
+    .version-note {
+      font-size: 13px;
+      color: var(--secondary);
+      margin-top: 14px;
+    }
+
+    /* Screenshots */
+    .screenshots {
+      overflow-x: auto;
+      padding: 0 24px 0;
+      margin-bottom: 80px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .screenshots-inner {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .screenshots img {
+      height: 520px;
+      border-radius: 36px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.16);
+    }
+
+    /* Features */
+    .features {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .feature-icon { font-size: 32px; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+    .feature-card p { font-size: 15px; color: var(--secondary); }
+
+    /* Platform badges */
+    .platforms {
+      text-align: center;
+      padding: 0 24px 80px;
+    }
+    .platforms p {
+      font-size: 14px;
+      color: var(--secondary);
+      margin-top: 12px;
+    }
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .badge {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 980px;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(0,0,0,0.08);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      color: var(--secondary);
+    }
+    footer a { color: var(--secondary); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="app-icon">📈</div>
+    <h1>Stock Portfolio</h1>
+    <p class="tagline">Track your personal investments by lot. See live performance across Mac and iPhone.</p>
+    <div class="cta-row">
+      <a class="btn-download" href="https://github.com/roymerrill/stock-portfolio-app/releases/latest/download/StockPortfolio.dmg">
+        ⬇ Download for Mac
+      </a>
+      <a class="btn-appstore" href="https://apps.apple.com/app/idYOUR_APP_ID">
+        📱 App Store
+      </a>
+    </div>
+    <p class="version-note">macOS 15 · Free · No account required</p>
+  </section>
+
+  <!-- Replace these src paths with your actual screenshot files in /screenshots/ -->
+  <div class="screenshots">
+    <div class="screenshots-inner">
+      <img src="screenshots/01_portfolio_dashboard.png" alt="Portfolio dashboard showing total value and holdings" />
+      <img src="screenshots/02_lot_detail.png" alt="AAPL lot detail showing +62% gain" />
+      <img src="screenshots/03_settings.png" alt="Settings with privacy mode and API key" />
+    </div>
+  </div>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Lot-level tracking</h3>
+      <p>Track multiple purchase lots per ticker — symbol, shares, date, and price. See exactly what each lot has returned.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Live quotes</h3>
+      <p>Prices update automatically via Finnhub. Bring your own free API key to bypass the shared proxy and use your personal quota.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔲</div>
+      <h3>Home Screen widgets</h3>
+      <p>Beautiful WidgetKit widgets in small, medium, and large sizes — on iPhone Home Screen and Mac desktop.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🙈</div>
+      <h3>Privacy mode</h3>
+      <p>Hide dollar amounts and position sizes at a tap. Percentage movements stay visible so you stay informed without exposing details.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">☁️</div>
+      <h3>iCloud sync</h3>
+      <p>Your lots sync automatically across iPhone and Mac via iCloud — no account, no server.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Keychain-secured</h3>
+      <p>Your API key is stored only in the Keychain — never in logs, files, or synced storage. Your data stays on your devices.</p>
+    </div>
+  </section>
+
+  <section class="platforms">
+    <h2 style="font-size:28px; font-weight:600; margin-bottom:8px;">Built for Apple platforms</h2>
+    <div class="badge-row">
+      <span class="badge">🖥 macOS 15+</span>
+      <span class="badge">📱 iOS 18+</span>
+      <span class="badge">🔲 WidgetKit</span>
+      <span class="badge">☁️ CloudKit</span>
+      <span class="badge">SwiftUI</span>
+    </div>
+    <p>Developer ID signed &amp; notarized for Mac. Available on the App Store for iPhone.</p>
+  </section>
+
+  <footer>
+    <p>
+      <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="mailto:roymerrill@mac.com">Support</a> &nbsp;·&nbsp;
+      Made by Roy Merrill
+    </p>
+  </footer>
+
+</body>
+</html>
